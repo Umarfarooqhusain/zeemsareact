@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+/* App.css or index.css */
+
+/* Define the initial state of the page */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px); /* Start with a slight downward offset */
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0); /* End at the normal position */
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(10px); /* Exit with a slight downward offset */
+  transition: opacity 500ms ease, transform 500ms ease;
+}
