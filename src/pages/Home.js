@@ -37,9 +37,7 @@ const Home = () => {
   return (
     <main>
       <ImageSlider />
-
-      {/* Top Categories Section */}
-      <div className="flex justify-center">
+      <div id="top-categories" className="flex justify-center">
         <h2
           className={`text-3xl font-semibold tracking-wide mt-9 ${styles.nav}`}
         >
@@ -69,7 +67,7 @@ const Home = () => {
       </div>
 
       {/* Featured Items Section */}
-      <div className="flex justify-center">
+      <div id="featured-products" className="flex justify-center">
         <h2
           className={`text-3xl font-semibold tracking-wide mt-9 ${styles.nav}`}
         >

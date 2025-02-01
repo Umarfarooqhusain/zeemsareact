@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet"; // Import react-helmet
 import client from "../sanityClient";
 import styles from "../ui.module.css"; // Adjust the path to your CSS module
 
@@ -30,6 +31,14 @@ const CategoryPage = () => {
 
   return (
     <div className="p-8">
+      <Helmet>
+        <title>{category.name} - Zeemsa OverSeas</title>
+        <meta
+          name="description"
+          content={`Explore the ${category.name} category at Zeemsa OverSeas. Discover a wide range of products in this category.`}
+        />
+      </Helmet>
+
       {/* Category Title */}
       <div className="flex justify-center">
         <span
@@ -43,12 +52,12 @@ const CategoryPage = () => {
       <div className="p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
         {category.products.map((product, index) => (
           <div
-            key={index}
+            key={product._id}
             className="flex flex-col items-center border border-gray-200 shadow-md overflow-hidden transition-transform transform duration-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-gray-400"
           >
             <img
               src={product.imageUrl || "/placeholder.png"}
-              alt={product.name}
+              alt={`Product: ${product.name} in the ${category.name} category`}
               className="w-full h-full object-cover max-w-[300px] max-h-[300px]"
             />
             <h3 className="text-sm mt-3 tracking-wide text-center">

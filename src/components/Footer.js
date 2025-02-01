@@ -30,9 +30,7 @@ const Footer = () => {
       return;
     }
 
-    const formData = {
-      email: email,
-    };
+    const formData = { email };
 
     try {
       await emailjs.send(serviceId, templateId, formData, userId);
@@ -49,7 +47,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-8">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-left mb-8">
+        <section className="text-left mb-8">
           <h2 className="text-xl font-semibold">
             Stay Connected With Our Email Updates
           </h2>
@@ -83,9 +81,9 @@ const Footer = () => {
             <p className="mt-4 text-gray-500">{successMessage}</p>
           )}
           {errorMessage && <p className="mt-4 text-red-500">{errorMessage}</p>}
-        </div>
+        </section>
 
-        <div className="text-left mb-8">
+        <section className="text-left mb-8">
           <h2 className="text-2xl font-bold">Zeemsa Overseas</h2>
           <p className="text-sm mt-2 font-dancing-script">
             At Zeemsa Overseas, we bring you the finest handcrafted products
@@ -93,9 +91,10 @@ const Footer = () => {
             mission is to offer unique pieces that tell a story, bringing art
             and culture into your home.
           </p>
-        </div>
+        </section>
 
-        <div className="flex gap-4 mb-8">
+        <section className="flex gap-4 mb-8">
+          {/* Social Media Links */}
           <a
             href="https://www.instagram.com/zeemsa_designs/profilecard/?igsh=MXB5eWhtd3k4MDkxYQ%3D%3D"
             target="_blank"
@@ -122,31 +121,33 @@ const Footer = () => {
             href="https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=azeem-niyazi-032035257"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Linkedin"
+            aria-label="LinkedIn"
             className="group"
           >
             <div className="p-2 rounded-full bg-gray-700 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-blue-700 transition duration-500 ease-in-out transform hover:scale-110">
               <FaLinkedin size={24} />
             </div>
           </a>
-        </div>
+        </section>
 
-        <div className="text-left text-sm">
+        <section className="text-left text-sm">
           <h3 className="text-lg font-semibold">Store Information</h3>
-          <p className="mt-2">Mangal pura, Sarai Tareen, Sambhal, India</p>
-          <p>
-            Email:{" "}
-            <a href="mailto:info@zeemsa.com" className="underline">
-              info@zeemsaoverseas.com
-            </a>
-          </p>
-          <p>
-            Phone:{" "}
-            <a href="tel:+918881119780" className="underline">
-              +918881119780
-            </a>
-          </p>
-        </div>
+          <address>
+            <p className="mt-2">Mangal pura, Sarai Tareen, Sambhal, India</p>
+            <p>
+              Email:{" "}
+              <a href="mailto:info@zeemsa.com" className="underline">
+                info@zeemsaoverseas.com
+              </a>
+            </p>
+            <p>
+              Phone:
+              <a href="tel:+918881119780" className="underline">
+                +918881119780
+              </a>
+            </p>
+          </address>
+        </section>
       </div>
     </footer>
   );

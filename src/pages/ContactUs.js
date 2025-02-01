@@ -11,9 +11,6 @@ const ContactUs = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  console.log(process.env.REACT_APP_SERVICE_ID);
-  console.log(process.env.REACT_APP_TEMPLATE_ID);
-  console.log(process.env.REACT_APP_USER_ID);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,7 +23,6 @@ const ContactUs = () => {
     setErrorMessage("");
     setSuccessMessage("");
 
-    // EmailJS Configuration
     const serviceId = process.env.REACT_APP_SERVICE_ID || "";
     const templateId = process.env.REACT_APP_TEMPLATE_ID || "";
     const userId = process.env.REACT_APP_USER_ID || "";
@@ -65,7 +61,12 @@ const ContactUs = () => {
 
   return (
     <div className="md:mt-28 container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-4 text-center">Contact Us</h1>
+      <h1
+        className="text-3xl font-bold mb-4 text-center"
+        aria-label="Contact Us Title"
+      >
+        Contact Us
+      </h1>
 
       {successMessage && (
         <p
@@ -92,6 +93,7 @@ const ContactUs = () => {
           <label
             htmlFor="name"
             className="block text-sm font-medium text-gray-700 mb-1"
+            aria-label="Name Input Label"
           >
             Name
           </label>
@@ -104,6 +106,7 @@ const ContactUs = () => {
             className="w-full px-4 py-2 border rounded focus:ring focus:ring-gray-300 border-gray-300"
             placeholder="Your name"
             required
+            aria-label="Name Input"
           />
         </div>
 
@@ -111,6 +114,7 @@ const ContactUs = () => {
           <label
             htmlFor="email"
             className="block text-sm font-medium text-gray-700 mb-1"
+            aria-label="Email Input Label"
           >
             Email
           </label>
@@ -123,6 +127,7 @@ const ContactUs = () => {
             className="w-full px-4 py-2 border rounded focus:ring focus:ring-gray-300 border-gray-300"
             placeholder="Your Email Address"
             required
+            aria-label="Email Input"
           />
         </div>
 
@@ -130,6 +135,7 @@ const ContactUs = () => {
           <label
             htmlFor="message"
             className="block text-sm font-medium text-gray-700 mb-1"
+            aria-label="Message Input Label"
           >
             Message
           </label>
@@ -142,6 +148,7 @@ const ContactUs = () => {
             placeholder="Write your message"
             rows={4}
             required
+            aria-label="Message Input"
           />
         </div>
 
@@ -149,8 +156,13 @@ const ContactUs = () => {
           type="submit"
           className="w-full bg-gray-700 text-white py-2 rounded font-semibold hover:bg-gray-600 transition duration-300"
           disabled={loading}
+          aria-label="Submit Button"
         >
-          {loading ? "Sending..." : "Send Message"}
+          {loading ? (
+            <span className="spinner-border spinner-border-sm"></span>
+          ) : (
+            "Send Message"
+          )}
         </button>
       </form>
     </div>

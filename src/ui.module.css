@@ -40,9 +40,13 @@
   left: 50%;
   transform: translateX(-50%) scaleY(0);
   transform-origin: top;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   opacity: 0;
   visibility: hidden;
-  background: linear-gradient(to top, #6e769aaa, #ffffff);
+  /* background: linear-gradient(to top, #6e769aaa, #ffffff); */
+  background-color: #ffffff;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   z-index: 1000;
@@ -71,21 +75,106 @@
   transition: color transform 0.3s ease-in-out;
 }
 
+/* Submenu for Featured Products */
+.featuredMenu {
+  position: relative;
+}
+.featuredButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 15px;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.featuredButton:hover {
+  color: gray;
+}
+
+.subMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none; /* Default state: hidden */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transform: translateY(-20px);
+  background-color: rgb(196, 195, 195);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  padding: 10px 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 180px; /* Height for 3 items */
+  overflow-y: auto; /* Enable vertical scrolling */
+  transition: transform 0.9s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.arrowIcon {
+  transition: transform 0.3s ease;
+}
+
+.arrowIconOpen {
+  transform: rotate(180deg);
+}
+.subMenuOpen {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  display: block; /* Opens the submenu and pushes elements down */
+  margin-top: -10px; /* Add spacing if needed */
+}
+.subMenu::-webkit-scrollbar {
+  width: 6px;
+}
+.subMenu::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 4px;
+}
+
+.subMenu::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
+.subMenu li {
+  margin: 0;
+}
+
+.subMenu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding-left: 50px;
+}
+
+.subMenu a:hover {
+  color: gray;
+  transition: color transform 0.3s ease-in-out;
+}
+
 /* Navigation Link Styling */
 .nav {
   font-size: 18px;
   transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out,
     transform 0.3s ease-in-out;
   margin-right: 2rem;
+  font-family: Playfair Display;
 }
 
 .nav:hover {
   color: gray;
   border-bottom: 1px solid gray;
   transition: color transform 0.3s ease-in-out;
-}
-
-/* Custom Font Class (Dancing Script) */
-.fontFamily {
-  font-family: "Dancing Script", cursive;
 }
