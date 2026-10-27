@@ -140,12 +140,6 @@ const Footer = () => {
                 info@zeemsaoverseas.com
               </a>
             </p>
-            <p>
-              Phone:
-              <a href="tel:+918881119780" className="underline">
-                +918881119780
-              </a>
-            </p>
           </address>
         </section>
       </div>

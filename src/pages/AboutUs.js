@@ -33,16 +33,16 @@ const AboutUs = () => {
             "Welcome to Our Handicraft Store – A Haven of Artistry and Tradition
             Step into a world where tradition meets innovation, and every piece
             tells a story. Our collection showcases the finest handcrafted
-            treasures, lovingly created by skilled artisans from across the
-            globe. From timeless designs to contemporary creations, each product
-            reflects the passion and craftsmanship passed down through
-            generations. At the heart of our mission is a commitment to
-            preserving cultural heritage, empowering artisans, and embracing
-            sustainability. When you choose us, you’re not just buying a product
-            – you’re celebrating artistry, supporting local communities, and
-            contributing to a greener, more thoughtful world. Discover the
-            beauty, elegance, and individuality of handmade art, and let us
-            bring a touch of tradition and innovation to your home and life."
+            treasures, lovingly created by skilled artisans. From timeless
+            designs to contemporary creations, each product reflects the passion
+            and craftsmanship passed down through generations. At the heart of
+            our mission is a commitment to preserving cultural heritage,
+            empowering artisans, and embracing sustainability. When you choose
+            us, you’re not just buying a product – you’re celebrating artistry,
+            supporting local communities, and contributing to a greener, more
+            thoughtful world. Discover the beauty, elegance, and individuality
+            of handmade art, and let us bring a touch of tradition and
+            innovation to your home and life."
           </p>
         </section>
       </div>
